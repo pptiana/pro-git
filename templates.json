@@ -1,0 +1,13 @@
+{
+    "tpl": {
+        "pas": {
+            "url": "https://git.bjv30.isscloud.com/cloudgo/pastry.git",
+            "branch": "develop"
+        },
+        "ms": {
+            "url": "https://git.bjv30.isscloud.com/fed/microservice.git",
+            "branch": "develop"
+        }
+    },
+    "compAry": {}
+}

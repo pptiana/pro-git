@@ -1,0 +1,55 @@
+#!/usr/bin/env node --harmony
+
+'use strict'
+const program = require('commander');
+/* commander是一个轻巧的nodejs模块，提供了用户命令行输入和参数解析强大功能 */
+
+// 定义使用方法
+program
+    .usage('<command>')
+
+program
+    .command('add')
+    .description('Add a new template')
+    .alias('a')
+    .action(() => {
+        require('../command/add')()
+    })
+
+program
+    .command('list')
+    .description('List all the templates')
+    .alias('l')
+    .action(() => {
+        require('../command/list')()
+    })
+
+program
+    .command('init')
+    .description('Generate a new project')
+    .alias('i')
+    .action(() => {
+        require('../command/init')()
+    })
+
+program
+    .command('delete')
+    .description('Delete a template')
+    .alias('d')
+    .action(() => {
+        require('../command/delete')()
+    })
+
+program
+    .command('component')
+    .description('create a set of files')
+    .alias('c')
+    .action(() => {
+        require('../command/component')()
+    })
+
+program.parse(process.argv)
+
+if (!program.args.length) {
+    program.help()
+}
